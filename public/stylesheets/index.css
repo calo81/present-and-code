@@ -1,0 +1,15 @@
+body {
+       padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+     }
+textarea {
+    border-style: none;
+    border-color: Transparent;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+
+.bodydiv {
+    height: 555px;
+}
