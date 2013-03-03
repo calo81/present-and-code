@@ -25,4 +25,5 @@ $(document).ready(function () {
     var socket = io.connect();
     var codeMirror = CodeMirror.fromTextArea($("#codeArea").get(0), {mode: 'ruby'});
     dashboard = new Dashboard({socket: socket, codeMirror: codeMirror});
+    $.deck('.slide');
 });

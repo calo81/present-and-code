@@ -11,6 +11,9 @@
     <link href="stylesheets/jquery-ui.css" rel="stylesheet">
     <link href="stylesheets/index.css" rel="stylesheet">
     <link href="stylesheets/codemirror.css" rel="stylesheet">
+    <link href="stylesheets/deck.core.css" rel="stylesheet">
+    <link href="stylesheets/deck.navigation.css" rel="stylesheet">
+    <link href="stylesheets/deck.goto.css" rel="stylesheet">
 
     <script src="javascripts/jquery-1.9.1.js"></script>
     <script src="javascripts/jquery-ui.js"></script>
@@ -19,6 +22,10 @@
     <script src="javascripts/socket.io.js"></script>
     <script src="javascripts/codemirror.js"></script>
     <script src="javascripts/codemirror-modes/ruby.js"></script>
+    <script src="javascripts/deck.core.js"></script>
+    <script src="javascripts/modernizr.custom.js"></script>
+    <script src="javascripts/deck.navigation.js"></script>
+    <script src="javascripts/deck.goto.js"></script>
     <script src="javascripts/dashboard.js"></script>
     <style type="text/css">
 
@@ -99,8 +106,39 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="span9 bodydiv" id="presentation-container">
-                    <iframe src="https://skydrive.live.com/embed?cid=8C72371879F876B0&resid=8C72371879F876B0%21107&authkey=AECa3zsLXvoZc9U&em=2"
-                            width="100%" height="550" frameborder="0" scrolling="no"></iframe>
+                    <div class="deck-container" style="width: 600px; height: 500px;">
+                        <section class="slide">
+                            <h2>Rails Controllers, Problem</h2>
+                            <ol>
+                                <li>
+                                    <h3>Invoking Crud</h3>
+
+                                    <p>Allows to create new blogs. If validation fails show a notice.</p>
+                                    <p>Allows to edit blogs.</p>
+                                    <p>Allows to see blogs.</p>
+                                    <p>Allows to delete blogs.</p>
+                                    <p>Allows to combine the contents of two blogs. (look 2 blogs by id and mix their content property and save the resulting one)</p>
+                                    <p>Needs a user logged in to create, edit or destroy blogs but not to show them.</p>
+                                    <p>Blogs can be rendered as views or as jsons.</p>
+                                    <p>If any action throws an error redirect to google :).</p>
+                                </li>
+                                <li>
+                                    <h3>More stuff</h3>
+
+                                    <p>anything else ....</p>
+                                </li>
+                                …
+                            </ol>
+                        </section>
+
+                        <section class="slide">
+                            <iframe src="https://skydrive.live.com/embed?cid=8C72371879F876B0&resid=8C72371879F876B0%21107&authkey=AECa3zsLXvoZc9U&em=2"
+                                    width="100%" height="550" frameborder="0" scrolling="no"></iframe>
+                        </section>
+4
+                        <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+                        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+                    </div>
                 </div>
                 <div class="span8 bodydiv" id="code-container">
                     <textarea id="codeArea"></textarea>
