@@ -10,6 +10,7 @@
    "socket.io": "~0.9.6",
    "mime": "~1.2.7",
    "mongodb": "~1.2.13",
-   "mongoose": "3.5.7"
+   "mongoose": "3.5.7",
+   "formidable": "1.0.12"
  }
 }

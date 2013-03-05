@@ -346,6 +346,10 @@ that use the API provided by core.
 		getOptions: function() {
 			return options;
 		},
+
+        current: function() {
+          return current
+        },
 		
 		/*
 		jQuery.deck('extend', name, method)
