@@ -7,12 +7,12 @@
     <file path="/server.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362497893875" ignored="false" />
     <file path="/index.html" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362509959511" ignored="false" />
     <file path="/dashboard.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362598165196" ignored="false" />
-    <file path="/dashboard_server.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362596568714" ignored="false" />
+    <file path="/dashboard_server.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362599828695" ignored="false" />
     <file path="$PROJECT_DIR$/../admin_bootstrap/bootstrap.sh" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362311236879" ignored="false" />
     <file path="/bootstrap.sh" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362311220399" ignored="false" />
     <file path="/impress.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362330724029" ignored="false" />
     <file path="/index.css" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362341085257" ignored="false" />
-    <file path="/fragment.js2" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362336529595" ignored="false" />
+    <file path="/fragment.js2" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362599564584" ignored="false" />
     <file path="/deck.core.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362427478001" ignored="false" />
     <file path="/package.json" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362438677185" ignored="false" />
     <file path="/deck.navigation.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362509236841" ignored="false" />
@@ -93,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dashboard.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="38" selection-start="262" selection-end="262" vertical-scroll-proportion="0.19203414">
+            <state line="9" column="38" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,10 +111,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard_server.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dashboard_server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/dashboard_server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="20" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.0">
+            <state line="52" column="77" selection-start="2130" selection-end="2130" vertical-scroll-proportion="1.0583215">
               <folding />
             </state>
           </provider>
@@ -190,8 +190,8 @@
         <option value="$PROJECT_DIR$/public/javascripts/deck.navigation.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/presentations/primera" />
-        <option value="$PROJECT_DIR$/lib/dashboard_server.js" />
         <option value="$PROJECT_DIR$/public/javascripts/dashboard.js" />
+        <option value="$PROJECT_DIR$/lib/dashboard_server.js" />
       </list>
     </option>
   </component>
@@ -678,16 +678,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/dashboard_server.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="20" selection-start="1828" selection-end="1828" vertical-scroll-proportion="0.0">
+        <state line="9" column="38" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/dashboard.js">
+    <entry file="file://$PROJECT_DIR$/lib/dashboard_server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="38" selection-start="262" selection-end="262" vertical-scroll-proportion="0.19203414">
+        <state line="52" column="77" selection-start="2130" selection-end="2130" vertical-scroll-proportion="1.0583215">
           <folding />
         </state>
       </provider>
