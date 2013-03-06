@@ -27,3 +27,17 @@
                             <!-- <iframe src="https://skydrive.live.com/embed?cid=8C72371879F876B0&resid=8C72371879F876B0%21107&authkey=AECa3zsLXvoZc9U&em=2"
                                     width="100%" height="550" frameborder="0" scrolling="no"></iframe> -->
                         </section>
+                        
+                         <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+                        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+                        
+<!-- CODE -->
+class Hey
+   def do_something
+   end
+end
+<!---->
+class Why
+    def do_something_else
+    end
+end

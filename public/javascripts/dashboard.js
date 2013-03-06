@@ -4,17 +4,19 @@ function Dashboard(config) {
     var lastCodeServerUpdate;
     var lastSlideServerUpdate;
 
-    function doesntComeFromCodeServerUpdate() {
-        return codeMirror.getValue() != lastCodeServerUpdate;
+    var me = this;
+
+    function comeFromCodeServerUpdate() {
+        return codeMirror.getValue() == lastCodeServerUpdate;
     }
 
-    function doesntComeFromSlideServerUpdate(index) {
-        return $.deck('current') != index;
+    function comeFromSlideServerUpdate(index) {
+        return $.deck('current') == index;
     }
 
     codeMirror.on("change", function (instance, changeObj) {
-        if (doesntComeFromCodeServerUpdate()) {
-            socket.emit("updateCode", codeMirror.getValue());
+        if (!comeFromCodeServerUpdate()) {
+            socket.emit("updateCode", codeMirror.getValue(), $.deck('current'));
         }
     });
 
@@ -28,14 +30,16 @@ function Dashboard(config) {
         $.deck('go', index);
     });
 
-    socket.on("presentationChanged", function (html) {
+    socket.on("presentationChanged", function (html,code) {
         $(".deck-container").html(html);
         $.deck('.slide');
         addNavigationSupport($, 'deck');
+        me.changeSlide(0,0);
+        codeMirror.setValue(code)
     });
 
     this.changeSlide = function (from, to) {
-        if (doesntComeFromSlideServerUpdate(to)) {
+        if (!comeFromSlideServerUpdate(to)) {
             socket.emit("changeSlideTo", to);
         }
     }
