@@ -7,7 +7,7 @@
     <file path="/server.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362497893875" ignored="false" />
     <file path="/index.html" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362509959511" ignored="false" />
     <file path="/dashboard.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362598165196" ignored="false" />
-    <file path="/dashboard_server.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362599828695" ignored="false" />
+    <file path="/dashboard_server.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362600323706" ignored="false" />
     <file path="$PROJECT_DIR$/../admin_bootstrap/bootstrap.sh" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362311236879" ignored="false" />
     <file path="/bootstrap.sh" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362311220399" ignored="false" />
     <file path="/impress.js" changelist="46c5fa1e-5034-4a3a-a708-cc3ecbebfe46" time="1362330724029" ignored="false" />
@@ -114,7 +114,7 @@
       <file leaf-file-name="dashboard_server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/dashboard_server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="77" selection-start="2130" selection-end="2130" vertical-scroll-proportion="1.0583215">
+            <state line="17" column="69" selection-start="598" selection-end="598" vertical-scroll-proportion="-0.10668563">
               <folding />
             </state>
           </provider>
@@ -687,7 +687,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/dashboard_server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="77" selection-start="2130" selection-end="2130" vertical-scroll-proportion="1.0583215">
+        <state line="17" column="69" selection-start="598" selection-end="598" vertical-scroll-proportion="-0.10668563">
           <folding />
         </state>
       </provider>
