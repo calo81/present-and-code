@@ -1,8 +1,8 @@
 <section class="slide">
-                            <h2>Rails Controllers, Problem</h2>
+                            <h2>Rails Controllers</h2>
                             <ol>
                                 <li>
-                                    <h3>Invoking Crud</h3>
+                                    <h3>Rack</h3>
 
                                     <p>Allows to create new blogs. If validation fails show a notice.</p>
                                     <p>Allows to edit blogs.</p>
@@ -31,7 +31,7 @@
                          <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
                         <a href="#" class="deck-next-link" title="Next">&#8594;</a>
                         
-<!-- CODE -->
+<!-- SECTION -->
 class Hey
    def do_something
    end
@@ -41,3 +41,27 @@ class Why
     def do_something_else
     end
 end
+<!-- SECTION -->
+<section class="slide">
+                            <h2>Rails Controllers, Problem</h2>
+                            <ol>
+                                <li>
+                                    <h3>Invoking Crud</h3>
+
+                                    <p>Allows to create new blogs. If validation fails show a notice.</p>
+                                    <p>Allows to edit blogs.</p>
+                                    <p>Allows to see blogs.</p>
+                                    <p>Allows to delete blogs.</p>
+                                    <p>Allows to combine the contents of two blogs. (look 2 blogs by id and mix their content property and save the resulting one)</p>
+                                    <p>Needs a user logged in to create, edit or destroy blogs but not to show them.</p>
+                                    <p>Blogs can be rendered as views or as jsons.</p>
+                                    <p>If any action throws an error redirect to google :).</p>
+                                </li>
+                                <li>
+                                    <h3>More stuff</h3>
+
+                                    <p>anything else ....</p>
+                                </li>
+                                …
+                            </ol>
+                        </section>

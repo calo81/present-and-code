@@ -3,6 +3,9 @@ function Dashboard(config) {
     var codeMirror = config.codeMirror;
     var lastCodeServerUpdate;
     var lastSlideServerUpdate;
+    var slidesHtml;
+    var firstSlideCode;
+    var inProblem = false;
 
     var me = this;
 
@@ -14,9 +17,27 @@ function Dashboard(config) {
         return $.deck('current') == index;
     }
 
+    function updateContainers(html, code) {
+        $(".deck-container").html(html);
+        $.deck('.slide');
+        addNavigationSupport($, 'deck');
+        me.changeSlide(0, 0);
+        codeMirror.setValue(code)
+    }
+
+    function setPresentation(html, code) {
+        slidesHtml = html;
+        firstSlideCode = code;
+        updateContainers(html, code);
+    }
+
     codeMirror.on("change", function (instance, changeObj) {
         if (!comeFromCodeServerUpdate()) {
-            socket.emit("updateCode", codeMirror.getValue(), $.deck('current'));
+            if (inProblem) {
+                socket.emit("updateProblemCode", codeMirror.getValue());
+            } else {
+                socket.emit("updateCode", codeMirror.getValue(), $.deck('current'));
+            }
         }
     });
 
@@ -30,18 +51,33 @@ function Dashboard(config) {
         $.deck('go', index);
     });
 
-    socket.on("presentationChanged", function (html,code) {
-        $(".deck-container").html(html);
-        $.deck('.slide');
-        addNavigationSupport($, 'deck');
-        me.changeSlide(0,0);
-        codeMirror.setValue(code)
+    socket.on("problemShowed", function (data) {
+        inProblem = true;
+        updateContainers(data.html, data.code);
+    });
+
+    socket.on("presentationChanged", function (html, code) {
+        inProblem = false;
+        setPresentation(html, code);
+    });
+
+    socket.on("presentationShowed", function (html, code) {
+        inProblem = false;
+        setPresentation(html, code);
     });
 
     this.changeSlide = function (from, to) {
         if (!comeFromSlideServerUpdate(to)) {
             socket.emit("changeSlideTo", to);
         }
+    }
+
+    this.showProblem = function () {
+        socket.emit("showProblem");
+    }
+
+    this.showPresentation = function () {
+        socket.emit("showPresentation", slidesHtml, firstSlideCode);
     }
 }
 
@@ -60,4 +96,13 @@ $(document).ready(function () {
             socket.emit("getPresentation", $("#commander").val());
         }
     });
+    $("#problemButton").click(function () {
+        dashboard.showProblem();
+    });
+
+    $("#presentationButton").click(function () {
+        dashboard.showPresentation();
+    });
+
+
 });
