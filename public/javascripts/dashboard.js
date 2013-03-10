@@ -104,5 +104,7 @@ $(document).ready(function () {
         dashboard.showPresentation();
     });
 
-
+    $(".language").click(function(event){
+        codeMirror.setOption("mode",event.target.id);
+    });
 });

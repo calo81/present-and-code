@@ -22,6 +22,7 @@
     <script src="javascripts/socket.io.js"></script>
     <script src="javascripts/codemirror.js"></script>
     <script src="javascripts/codemirror-modes/ruby.js"></script>
+    <script src="javascripts/codemirror-modes/javascript.js"></script>
     <script src="javascripts/deck.core.js"></script>
     <script src="javascripts/modernizr.custom.js"></script>
     <script src="javascripts/deck.navigation.js"></script>
@@ -155,6 +156,12 @@
                     </div>
                 </div>
                 <div class="span8 bodydiv" id="code-container">
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <button class="btn language" id="ruby">Ruby</button>
+                            <button class="btn language" id="javascript">Javascript</button>
+                        </div>
+                    </div>
                     <textarea id="codeArea"></textarea>
                 </div>
             </div>
