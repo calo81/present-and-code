@@ -1,0 +1,136 @@
+<section class="slide">
+                            <h2>Rails basic declarative validations</h2>
+                            <ol>
+                                <li>
+                                    <h3>Calling valid? or save (which calls valid)</h3>
+
+                                    <p>Clear the errors collection.</p>
+                                    <p>Run validations.</p>
+                                    <p>Return whether the model’s errors collection is now empty or not.</p>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <section class="slide">
+                                                   <h2>Rails validations</h2>
+                                                                               <ol>
+                                                                                   <li>
+                                                                                       <h3>Declarative validations</h3>
+
+                                                                                       <p>validates—acceptance—of</p>
+                                                                                       <p>validates—confirmation—of</p>
+                                                                                       <p>validates—each</p>
+                                                                                       <p>validates—format—of</p>
+                                                                                       <p>validates_inclusion_of</p>
+                                                                                       <p>validates—length—of</p>
+                                                                                       <p>validates—numericality—of</p>
+                                                                                       <p>validates—presence—of</p>
+                                                                                       <p>validates—uniqueness—of</p>
+                                                                                       <p>validates—with</p>
+
+
+
+
+                                                                                   </li>
+                                                                               </ol>
+                                                </section>
+
+                        <section class="slide">
+                           <h2>Rails basic declarative validations</h2>
+                                                       <ol>
+                                                           <li>
+                                                               <h3>Errors collection</h3>
+
+                                                               <p>It is filled on validation errors</p>
+                                                               <p>You can add errors yourself with the 'add' method</p>
+                                                               <p>It is a hash like object</p>
+                                                           </li>
+                                                       </ol>
+                        </section>
+                        
+                         <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+                        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+                        
+<!-- SECTION -->
+<!---->
+class Cancellation < ActiveRecord::Base
+  validates_acceptance_of :account_cancellation, :accept=> 'YES'
+end
+
+class Account < ActiveRecord::Base
+  validates_confirmation_of :password
+end
+
+class Invoice < ActiveRecord::Base
+  validates_each :supplier_id, :purchase_order do |record, attr, value|
+       record.errors.add(attr) unless PurchasingSystem.validate(attr,value)
+  end
+end
+
+class Person < ActiveRecord::Base
+  validates_format_of :email,
+    :with=>/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/
+end
+
+class Person < ActiveRecord::Base
+  validates_inclusion_of :gender, :in=> ['m','f'], :message=> 'ORLY?'
+end
+
+class Account < ActiveRecord::Base
+ validates_exclusion_of :login, :in=> ['admin', 'root', 'superuser'],
+     :message=> 'Boratsays "Naughty, naughty!"'
+end
+
+class Account < ActiveRecord::Base
+  validates_length_of :login, :minimum=>5
+  validates_length_of :password, :within=>5..20
+  validates_length_of :account_number, :is=>16
+end
+
+class Account < ActiveRecord::Base
+    validates_numericality_of :account_number, :only_integer=>true
+    # Options
+             # :equal_to
+             # :greater_than
+             # :greater_than_or_equal_to
+             # :less_than
+             # :less_than_or_equal_to
+end
+
+class Account < ActiveRecord::Base
+    validates_presence_of :login, :email, :account_number
+end
+
+class Account < ActiveRecord::Base
+  validates_uniqueness_of :login
+end
+
+# For using validates_with
+class EmailValidator < ActiveRecord::Validator
+  def validate()
+    record.errors[:email] << "is not valid" unless
+    record.email =~ /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
+  end
+end
+
+class Account < ActiveRecord::Base
+  validates_with EmailValidator
+end
+<!---->
+errors[:base] = msg
+errors[:attribute] = msg
+errors.clear
+<!-- SECTION -->
+<section class="slide">
+                            <h2>Rails basic declarative Validation, Problem</h2>
+                            <ol>
+                                <li>
+                                    <h3>Validating blogs</h3>
+
+                                    <p>make sure that the terms_of_agreement are accepted before saving a blog.</p>
+                                    <p>no other blog with the exact same content is saved.</p>
+                                    <p>create a generic validator that limits the size of every long text to 1000 characters, and shows "too long" as message if exceded</p>
+                                    <p>validates that the blog has content before saving</p>
+                                </li>
+                            </ol>
+                        </section>
